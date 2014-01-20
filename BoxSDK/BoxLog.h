@@ -9,6 +9,8 @@
 #ifndef BoxSDK_BoxLog_h
 #define BoxSDK_BoxLog_h
 
+#define BOX_DISABLE_DEBUG_LOGGING
+
 #ifdef DEBUG
 #ifndef BOX_DISABLE_DEBUG_LOGGING
 #define BOXLogFunction()        NSLog(@"%s", __FUNCTION__)
