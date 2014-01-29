@@ -37,8 +37,6 @@
 		C54BBF701758539E00F5DAD8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54BBF6F1758539E00F5DAD8 /* QuartzCore.framework */; };
 		C58BC262175EDD670071BF37 /* BoxItem+BoxAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C58BC260175EDD670071BF37 /* BoxItem+BoxAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C58BC263175EDD670071BF37 /* BoxItem+BoxAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C58BC261175EDD670071BF37 /* BoxItem+BoxAdditions.m */; };
-		C58BC268175EDF7C0071BF37 /* BoxODRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = C58BC266175EDF7C0071BF37 /* BoxODRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C58BC269175EDF7C0071BF37 /* BoxODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C58BC267175EDF7C0071BF37 /* BoxODRefreshControl.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C5C11A3F175DA92E0001EC88 /* NSString+BoxAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C5C11A3D175DA92E0001EC88 /* NSString+BoxAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C5C11A40175DA92E0001EC88 /* NSString+BoxAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C11A3E175DA92E0001EC88 /* NSString+BoxAdditions.m */; };
 		C5C11A44175DACCE0001EC88 /* UIImage+BoxAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C5C11A42175DACCE0001EC88 /* UIImage+BoxAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -422,8 +420,6 @@
 		C54BBF6F1758539E00F5DAD8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C58BC260175EDD670071BF37 /* BoxItem+BoxAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BoxItem+BoxAdditions.h"; sourceTree = "<group>"; };
 		C58BC261175EDD670071BF37 /* BoxItem+BoxAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BoxItem+BoxAdditions.m"; sourceTree = "<group>"; };
-		C58BC266175EDF7C0071BF37 /* BoxODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxODRefreshControl.h; sourceTree = "<group>"; };
-		C58BC267175EDF7C0071BF37 /* BoxODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxODRefreshControl.m; sourceTree = "<group>"; };
 		C5C11A3D175DA92E0001EC88 /* NSString+BoxAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BoxAdditions.h"; sourceTree = "<group>"; };
 		C5C11A3E175DA92E0001EC88 /* NSString+BoxAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BoxAdditions.m"; sourceTree = "<group>"; };
 		C5C11A42175DACCE0001EC88 /* UIImage+BoxAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxAdditions.h"; sourceTree = "<group>"; };
@@ -736,15 +732,6 @@
 			path = FolderPicker;
 			sourceTree = "<group>";
 		};
-		C58BC265175EDF7C0071BF37 /* ODRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				C58BC266175EDF7C0071BF37 /* BoxODRefreshControl.h */,
-				C58BC267175EDF7C0071BF37 /* BoxODRefreshControl.m */,
-			);
-			path = ODRefreshControl;
-			sourceTree = "<group>";
-		};
 		E4081D901758728900F6D6AA /* BoxSDKResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,7 +949,6 @@
 		E4FAD980172CE2C50052AD11 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				C58BC265175EDF7C0071BF37 /* ODRefreshControl */,
 				E4FAD981172CE2C50052AD11 /* ISO8601DateFormatter */,
 			);
 			path = External;
@@ -1317,7 +1303,6 @@
 				CA0F91EC183E881F0090696B /* BoxComment.h in Headers */,
 				CA0F91F0183E93BA0090696B /* BoxCommentableItem.h in Headers */,
 				CA0F91F4183EA1890090696B /* BoxCommentsRequestBuilder.h in Headers */,
-				C58BC268175EDF7C0071BF37 /* BoxODRefreshControl.h in Headers */,
 				AF6E06A817AE66AF0039F17D /* BoxModelComparators.h in Headers */,
 				AF153B1317C346D6008D636C /* NSJSONSerialization+BoxAdditions.h in Headers */,
 				9400B0BB17FB8BE00077D4E7 /* BoxUsersRequestBuilder.h in Headers */,
@@ -1484,6 +1469,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Box;
+				TargetAttributes = {
+					F0E5E2FC17A78AEF00153646 = {
+						TestTargetID = E470433A16D41DC500FED29A;
+					};
+				};
 			};
 			buildConfigurationList = E470433616D41DC500FED29A /* Build configuration list for PBXProject "BoxSDK" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1683,7 +1673,6 @@
 				C5C11A40175DA92E0001EC88 /* NSString+BoxAdditions.m in Sources */,
 				C5C11A45175DACCE0001EC88 /* UIImage+BoxAdditions.m in Sources */,
 				C58BC263175EDD670071BF37 /* BoxItem+BoxAdditions.m in Sources */,
-				C58BC269175EDF7C0071BF37 /* BoxODRefreshControl.m in Sources */,
 				AF6E06A917AE66AF0039F17D /* BoxModelComparators.m in Sources */,
 				AF153B1417C346D6008D636C /* NSJSONSerialization+BoxAdditions.m in Sources */,
 				9400B0BC17FB8BE00077D4E7 /* BoxUsersRequestBuilder.m in Sources */,
@@ -1948,6 +1937,7 @@
 				DSTROOT = /tmp/BoxSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/BoxSDK;
@@ -1961,6 +1951,7 @@
 				DSTROOT = /tmp/BoxSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/BoxSDK;
@@ -1982,6 +1973,7 @@
 					"\"$(SRCROOT)/vendor/iOS/include\"",
 				);
 				INFOPLIST_FILE = "BoxSDKTests/BoxSDKTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/iOS/lib/OCMock\"",
@@ -2007,6 +1999,7 @@
 					"\"$(SRCROOT)/vendor/iOS/include\"",
 				);
 				INFOPLIST_FILE = "BoxSDKTests/BoxSDKTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vendor/iOS/lib/OCMock\"",
