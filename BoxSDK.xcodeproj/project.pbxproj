@@ -1841,7 +1841,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		37E70E7E18AE53E7000BE20A /* Pre-Release */ = {
+		37E70E7E18AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1866,9 +1866,9 @@
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
-		37E70E7F18AE53E7000BE20A /* Pre-Release */ = {
+		37E70E7F18AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
@@ -1880,9 +1880,9 @@
 				PUBLIC_HEADERS_FOLDER_PATH = include/BoxSDK;
 				SKIP_INSTALL = YES;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
-		37E70E8018AE53E7000BE20A /* Pre-Release */ = {
+		37E70E8018AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1906,9 +1906,9 @@
 				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
-		37E70E8118AE53E7000BE20A /* Pre-Release */ = {
+		37E70E8118AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1921,9 +1921,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
-		37E70E8218AE53E7000BE20A /* Pre-Release */ = {
+		37E70E8218AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1943,9 +1943,9 @@
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
-		37E70E8318AE53E7000BE20A /* Pre-Release */ = {
+		37E70E8318AE53E7000BE20A /* Inhouse */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1966,7 +1966,7 @@
 				TEST_AFTER_BUILD = YES;
 				WRAPPER_EXTENSION = octest;
 			};
-			name = "Pre-Release";
+			name = Inhouse;
 		};
 		E4081D981758728900F6D6AA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2234,7 +2234,7 @@
 			buildConfigurations = (
 				E4081D981758728900F6D6AA /* Debug */,
 				E4081D991758728900F6D6AA /* Release */,
-				37E70E8118AE53E7000BE20A /* Pre-Release */,
+				37E70E8118AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2244,7 +2244,7 @@
 			buildConfigurations = (
 				E470435E16D41DC500FED29A /* Debug */,
 				E470435F16D41DC500FED29A /* Release */,
-				37E70E7E18AE53E7000BE20A /* Pre-Release */,
+				37E70E7E18AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2254,7 +2254,7 @@
 			buildConfigurations = (
 				E470436116D41DC500FED29A /* Debug */,
 				E470436216D41DC500FED29A /* Release */,
-				37E70E7F18AE53E7000BE20A /* Pre-Release */,
+				37E70E7F18AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2264,7 +2264,7 @@
 			buildConfigurations = (
 				E470436416D41DC500FED29A /* Debug */,
 				E470436516D41DC500FED29A /* Release */,
-				37E70E8018AE53E7000BE20A /* Pre-Release */,
+				37E70E8018AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2274,7 +2274,7 @@
 			buildConfigurations = (
 				F0E5E30C17A78AEF00153646 /* Debug */,
 				F0E5E30D17A78AEF00153646 /* Release */,
-				37E70E8218AE53E7000BE20A /* Pre-Release */,
+				37E70E8218AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2284,7 +2284,7 @@
 			buildConfigurations = (
 				F0E5E30E17A78AEF00153646 /* Debug */,
 				F0E5E30F17A78AEF00153646 /* Release */,
-				37E70E8318AE53E7000BE20A /* Pre-Release */,
+				37E70E8318AE53E7000BE20A /* Inhouse */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
