@@ -100,6 +100,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
 	UIWebView *webView = (UIWebView *)self.view;
 	[webView stopLoading];
 
