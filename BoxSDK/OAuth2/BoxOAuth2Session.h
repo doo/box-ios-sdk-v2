@@ -167,6 +167,7 @@ extern NSString *const BoxOAuth2AuthenticationErrorKey;
  *
  * @warning This method is intended to be called from your application delegate in response to
  * `application:openURL:sourceApplication:annotation:`.
+ * @return YES, if authorization code is obtained, otherwhise it returns NO.
  */
 - (BOOL)performAuthorizationCodeGrantWithReceivedURL:(NSURL *)URL;
 
