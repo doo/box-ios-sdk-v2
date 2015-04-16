@@ -45,20 +45,22 @@ NSString *const BoxOAuth2AuthenticationErrorKey = @"BoxOAuth2AuthenticationError
 }
 
 #pragma mark - Authorization
-- (void)performAuthorizationCodeGrantWithReceivedURL:(NSURL *)URL
+- (BOOL)performAuthorizationCodeGrantWithReceivedURL:(NSURL *)URL
 {
     NSDictionary *URLQueryParams = [URL queryDictionary];
     NSString *authorizationCode = [URLQueryParams valueForKey:BoxOAuth2URLParameterAuthorizationCodeKey];
     NSString *authorizationError = [URLQueryParams valueForKey:BoxOAuth2URLParameterErrorCodeKey];
 
-    if (authorizationError != nil)
+    if (authorizationError != nil || authorizationCode == nil)
     {
-        NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:authorizationError
-                                                              forKey:BoxOAuth2AuthenticationErrorKey];
+        NSDictionary *errorInfo = nil;
+        if (authorizationError != nil) {
+            errorInfo = @{BoxOAuth2AuthenticationErrorKey:authorizationError};
+        }
         [[NSNotificationCenter defaultCenter] postNotificationName:BoxOAuth2SessionDidReceiveAuthenticationErrorNotification
                                                             object:self
                                                           userInfo:errorInfo];
-        return;
+        return NO;
     }
 
 
@@ -99,6 +101,7 @@ NSString *const BoxOAuth2AuthenticationErrorKey = @"BoxOAuth2AuthenticationError
     };
 
     [self.queueManager enqueueOperation:operation];
+    return YES;
 }
 
 - (NSURL *)authorizeURL
