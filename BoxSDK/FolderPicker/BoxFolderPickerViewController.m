@@ -139,11 +139,13 @@ typedef enum {
 - (UIBarButtonItem *)closeItem
 {
     if (_closeItem == nil) {
-        _closeItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", @"Title : button closing the folder picker") style:UIBarButtonItemStyleBordered target:self action:@selector(closeTouched:)];
+        _closeItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", @"Title : button closing the folder picker")
+                                                      style:UIBarButtonItemStylePlain
+                                                     target:self action:@selector(closeTouched:)];
         [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+        [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsCompact];
         [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-        [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
+        [_closeItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"standard-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsCompact];
         [_closeItem setTitlePositionAdjustment:UIOffsetMake(0.0, 1) forBarMetrics:UIBarMetricsDefault];
     }
 
@@ -153,11 +155,11 @@ typedef enum {
 - (UIBarButtonItem *)selectItem
 {
     if (!_selectItem) {
-        _selectItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", @"Title : button allowing the user to pick the current folder") style:UIBarButtonItemStyleBordered target:self action:@selector(selectTouched:)];
+        _selectItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", @"Title : button allowing the user to pick the current folder") style:UIBarButtonItemStylePlain target:self action:@selector(selectTouched:)];
         [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
+        [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsCompact];
         [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-        [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
+        [_selectItem setBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"action-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(kStrechHeightOffset, kStrechWidthOffset, kStrechHeightOffset, kStrechWidthOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsCompact];
         [_selectItem setTitlePositionAdjustment:UIOffsetMake(0.0, 1) forBarMetrics:UIBarMetricsDefault];
         _selectItem.width = kButtonWidth;
     }
@@ -224,22 +226,25 @@ typedef enum {
 
     // UI Setup
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor blackColor];
+    shadow.shadowOffset = CGSizeMake(0, -1);
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor whiteColor], UITextAttributeTextColor,
-      [UIColor blackColor], UITextAttributeTextShadowColor,
-      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)], UITextAttributeTextShadowOffset,
-      [UIFont boldSystemFontOfSize:16.0], UITextAttributeFont,
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      shadow, NSShadowAttributeName,
+      [UIFont boldSystemFontOfSize:16.0], NSFontAttributeName,
       nil]];
 
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:2.0 forBarMetrics:UIBarMetricsDefault];
 
     // Back button
-    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Title : cell allowing the user to go back in the viewControllers tree") style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", @"Title : cell allowing the user to go back in the viewControllers tree") style:UIBarButtonItemStylePlain target:nil action:nil];
     [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
-    [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
+    [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateNormal barMetrics:UIBarMetricsCompact];
+    [back setBackButtonBackgroundImage:[[UIImage  imageFromBoxSDKResourcesBundleWithName:@"back-tap"] resizableImageWithCapInsets:UIEdgeInsetsMake(16.0, kStretchBackButtonLeftOffset, 16.0, kStretchBackButtonRightOffset)] forState:UIControlStateHighlighted barMetrics:UIBarMetricsCompact];
     self.navigationItem.backBarButtonItem = back;
 
     self.navigationItem.rightBarButtonItems = @[self.closeItem];
