@@ -1618,7 +1618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1707,7 +1707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1796,7 +1796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1959,7 +1959,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1974,7 +1974,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/BoxSDK.dst;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BoxSDK/BoxSDK-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
